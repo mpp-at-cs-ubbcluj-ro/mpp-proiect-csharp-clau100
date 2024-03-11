@@ -4,9 +4,5 @@ namespace MPP_CSharp.Domain
     {
         private T id;
         public T Id => id;
-        public T getId()
-        {
-            return id;
-        }
     }
 }
