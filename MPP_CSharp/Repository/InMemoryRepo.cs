@@ -2,13 +2,13 @@ using MPP_CSharp.Domain;
 
 namespace MPP_CSharp.Repository
 {
-    public interface InMemoryRepo<T> where T : Entity<U> where U : new ( )
+    public interface IInMemoryRepo<T, TT> where T : Entity<TT> where TT : new ( )
     {
 		//TODO add optionals
-        T[] getAll();
-        T find(long id);
-        T delete(long id);
-        T add(T toAdd);
-        T update(T toUpdate);
+        T[] GetAll();
+        T Find(long id);
+        T Delete(long id);
+        T Add(T toAdd);
+        T Update(T toUpdate);
     }
 }

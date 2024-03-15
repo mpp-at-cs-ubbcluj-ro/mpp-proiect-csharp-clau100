@@ -1,0 +1,10 @@
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\MPP_CSharp.exe.config
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\MPP_CSharp.exe
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\MPP_CSharp.pdb
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.csproj.AssemblyReference.cache
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.Properties.Resources.resources
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.csproj.GenerateResource.cache
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.csproj.CoreCompileInputs.cache
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.exe
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.pdb
