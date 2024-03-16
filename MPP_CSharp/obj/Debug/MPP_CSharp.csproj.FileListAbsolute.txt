@@ -11,3 +11,11 @@ C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_
 C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\log4net.dll
 C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\log4net.xml
 C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.csproj.CopyComplete
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\EntityFramework.dll
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Data.SQLite.dll
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\EntityFramework.xml
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Data.SQLite.xml
