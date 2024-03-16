@@ -1,0 +1,4 @@
+2024-03-16 17:23:17,019 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-16 17:23:17,051 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-16 17:23:17,065 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-16 17:23:18,495 [1] INFO  MPP_CSharp.Program - Application closed
