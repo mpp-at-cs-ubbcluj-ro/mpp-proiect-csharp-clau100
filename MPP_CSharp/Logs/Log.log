@@ -1,25 +1,16 @@
-2024-03-16 17:30:32,374 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-16 17:30:32,389 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-16 17:30:32,399 [1] INFO  MPP_CSharp.Form1 - Finished Form1
-2024-03-16 17:30:34,392 [1] INFO  MPP_CSharp.Program - Application closed
-2024-03-16 17:39:29,953 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-16 17:39:29,967 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-16 17:39:29,967 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-16 17:39:29,971 [1] ERROR MPP_CSharp.Form1 - GetAll is not implemented!
-2024-03-16 17:39:29,982 [1] INFO  MPP_CSharp.Form1 - Finished Form1
-2024-03-16 17:39:37,449 [1] INFO  MPP_CSharp.Program - Application closed
-2024-03-16 20:35:17,592 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-16 20:35:17,615 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-16 20:35:17,653 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-16 20:35:54,133 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-16 20:35:54,147 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-16 20:35:54,159 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-16 20:36:49,564 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-16 20:36:49,588 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-16 20:36:49,633 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-16 20:39:21,526 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-16 20:39:21,543 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-16 20:39:21,554 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-16 20:39:21,687 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
-2024-03-16 20:39:21,713 [1] INFO  MPP_CSharp.Form1 - Finished Form1
-2024-03-16 20:39:23,556 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-17 11:31:00,970 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-17 11:31:01,006 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-17 11:31:01,027 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-17 11:31:01,165 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-17 11:31:01,175 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-17 11:31:01,178 [1] ERROR MPP_CSharp.Form1 - No connection associated with this command
+2024-03-17 11:31:04,384 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-17 11:31:29,470 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-17 11:31:29,491 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-17 11:31:29,497 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-17 11:31:29,585 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-17 11:31:29,593 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-17 11:31:29,598 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no user with id=100
+2024-03-17 11:31:29,598 [1] INFO  MPP_CSharp.Form1 - Find works!
+2024-03-17 11:31:29,610 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-17 11:31:34,413 [1] INFO  MPP_CSharp.Program - Application closed

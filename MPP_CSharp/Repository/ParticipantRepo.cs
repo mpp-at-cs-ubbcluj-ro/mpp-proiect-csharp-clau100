@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using log4net;
@@ -7,31 +5,30 @@ using MPP_CSharp.Domain;
 
 namespace MPP_CSharp.Repository
 {
-    public class UserRepo : IRepo<User, long>
+    public class ParticipantRepo : IRepo<Participant, long>
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
 
         private static readonly string ConnectionString =
             @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
-        public List<User> GetAll()
+        public List<Participant> GetAll()
         {
-            List<User> arr = new List<User>();
-            Log.Info("Fetching all Users from DB");
+            List<Participant> arr = new List<Participant>();
+            Log.Info("Fetching all Participanti from DB");
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand("SELECT * FROM User", connection))
+                using (SQLiteCommand command = new SQLiteCommand("SELECT * FROM Participant", connection))
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             long id = reader.GetInt64(reader.GetOrdinal("id"));
-                            string username = reader.GetString(reader.GetOrdinal("Username"));
-                            string password = reader.GetString(reader.GetOrdinal("Password"));
-                            User user = new User(id, username, password);
-                            arr.Add(user);
-                            Log.Info("Found user with id="+id);
+                            int varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                            Participant p = new Participant(id, varsta, new long[] { });
+                            arr.Add(p);
+                            Log.Info("Found participant with id="+id);
                         }
                     }
                 }
@@ -39,47 +36,43 @@ namespace MPP_CSharp.Repository
             return arr;
         }
 
-        public User Find(long id)
+        public Participant Find(long id)
         {
-            Log.Info("Trying to find User with id=" + id);
+            Log.Info("Trying to find Participant with id="+id);
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand(@"SELECT * FROM User where id = @id", connection))
+                using (SQLiteCommand command = new SQLiteCommand(@"SELECT * FROM Participant where id = @id", connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Log.Info("Found user with id="+id);
-                            string username = reader.GetString(reader.GetOrdinal("Username"));
-                            string password = reader.GetString(reader.GetOrdinal("Password"));
-                            User user = new User(id, username, password);
-                            return user;
+                            int varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                            Participant p = new Participant(id, varsta, new long[] { });
+                            Log.Info("Found participant with id="+id);
+                            return p;
                         }
                     }
                 }
             }
-            Log.Warn("Found no user with id="+id);
+            Log.Warn("Found no participant with id="+id);
             return null;
         }
 
         public void Delete(long id)
         {
-            Log.Info("Trying to delete User with id=" + id);
             throw new System.NotImplementedException();
         }
 
-        public void Add(User toAdd)
+        public void Add(Participant toAdd)
         {
-            Log.Info("Trying to add a User");
             throw new System.NotImplementedException();
         }
 
-        public void Update(User toUpdate)
+        public void Update(Participant toUpdate)
         {
-            Log.Info("Trying to update a User");
             throw new System.NotImplementedException();
         }
     }

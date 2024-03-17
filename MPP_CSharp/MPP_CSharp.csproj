@@ -80,7 +80,9 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Repository\ConcursRepo.cs" />
         <Compile Include="Repository\IRepo.cs" />
+        <Compile Include="Repository\ParticipantRepo.cs" />
         <Compile Include="Repository\UserRepo.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

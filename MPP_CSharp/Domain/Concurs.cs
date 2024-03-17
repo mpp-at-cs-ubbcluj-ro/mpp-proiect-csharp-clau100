@@ -2,12 +2,11 @@ namespace MPP_CSharp.Domain
 {
     public class Concurs : Entity<long>
     {
-        public Concurs(long id, string proba, int varstaMin, int varstaMax, int numarParticipanti, long[] participanti) : base(id)
+        public Concurs(long id, string proba, int varstaMin, int varstaMax, long[] participanti) : base(id)
         {
             this.proba = proba;
             this.varstaMin = varstaMin;
             this.varstaMax = varstaMax;
-            this.numarParticipanti = numarParticipanti;
             this.participanti = participanti;
         }
 
@@ -17,7 +16,7 @@ namespace MPP_CSharp.Domain
 
         public int VarstaMax => varstaMax;
 
-        public int NumarParticipanti => numarParticipanti;
+        public int NumarParticipanti => Participanti.Length;
 
         public long[] Participanti
         {
@@ -28,7 +27,6 @@ namespace MPP_CSharp.Domain
         private string proba;
         private int varstaMin;
         private int varstaMax;
-        private int numarParticipanti;
         private long[] participanti;
     }
 }

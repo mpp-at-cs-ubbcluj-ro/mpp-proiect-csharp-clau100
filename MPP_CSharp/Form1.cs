@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,26 @@ namespace MPP_CSharp
             {
                 Users.GetAll();
             }
-            catch (NotImplementedException)
+            catch (SQLiteException e)
             {
-                Log.Error("GetAll is not implemented!");
+                Log.Error(e.Message);
+            }
+
+            try
+            {
+                User u = Users.Find(100);
+                if (u is null)
+                {
+                    Log.Info("Find works!");
+                }
+                else
+                {
+                    throw new InvalidOperationException("Find does not work!");
+                }
+            }
+            catch (InvalidOperationException e)
+            {
+                Log.Error(e.Message);
             }
             InitializeComponent();
             Log.Info("Finished Form1");
