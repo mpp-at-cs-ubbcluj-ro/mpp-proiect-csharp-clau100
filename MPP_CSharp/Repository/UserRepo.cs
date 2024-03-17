@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using log4net;
@@ -11,25 +9,25 @@ namespace MPP_CSharp.Repository
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
 
-        private static readonly string ConnectionString =
-            @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
+        private const string ConnectionString = @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
+
         public List<User> GetAll()
         {
-            List<User> arr = new List<User>();
+            var arr = new List<User>();
             Log.Info("Fetching all Users from DB");
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand("SELECT * FROM User", connection))
+                using (var command = new SQLiteCommand("SELECT * FROM User", connection))
                 {
-                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            long id = reader.GetInt64(reader.GetOrdinal("id"));
-                            string username = reader.GetString(reader.GetOrdinal("Username"));
-                            string password = reader.GetString(reader.GetOrdinal("Password"));
-                            User user = new User(id, username, password);
+                            var id = reader.GetInt64(reader.GetOrdinal("id"));
+                            var username = reader.GetString(reader.GetOrdinal("Username"));
+                            var password = reader.GetString(reader.GetOrdinal("Password"));
+                            var user = new User(id, username, password);
                             arr.Add(user);
                             Log.Info("Found user with id="+id);
                         }
@@ -42,20 +40,20 @@ namespace MPP_CSharp.Repository
         public User Find(long id)
         {
             Log.Info("Trying to find User with id=" + id);
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand(@"SELECT * FROM User where id = @id", connection))
+                using (var command = new SQLiteCommand(@"SELECT * FROM User where id = @id", connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
-                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             Log.Info("Found user with id="+id);
-                            string username = reader.GetString(reader.GetOrdinal("Username"));
-                            string password = reader.GetString(reader.GetOrdinal("Password"));
-                            User user = new User(id, username, password);
+                            var username = reader.GetString(reader.GetOrdinal("Username"));
+                            var password = reader.GetString(reader.GetOrdinal("Password"));
+                            var user = new User(id, username, password);
                             return user;
                         }
                     }

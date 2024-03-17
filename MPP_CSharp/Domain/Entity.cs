@@ -2,13 +2,11 @@ namespace MPP_CSharp.Domain
 {
     public class Entity<T>
     {
-        private T id;
-
-        public Entity(T id)
+        protected Entity(T id)
         {
-            this.id = id;
+            Id = id;
         }
 
-        public T Id => id;
+        public T Id { get; }
     }
 }

@@ -2,21 +2,14 @@ namespace MPP_CSharp.Domain
 {
     public class Participant : Entity<long> 
     {
-        public int Varsta => varsta;
+        public int Varsta { get; }
 
-        public long[] Concursuri
-        {
-            get => concursuri;
-            set => concursuri = value;
-        }
+        public long[] Concursuri { get; set; }
 
         public Participant(long id, int varsta, long[] concursuri) : base(id)
         {
-            this.varsta = varsta;
-            this.concursuri = concursuri;
+            Varsta = varsta;
+            Concursuri = concursuri;
         }
-
-        private int varsta;
-        private long[] concursuri;
     }
 }

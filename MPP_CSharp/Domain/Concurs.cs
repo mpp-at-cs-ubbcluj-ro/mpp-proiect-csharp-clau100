@@ -4,29 +4,18 @@ namespace MPP_CSharp.Domain
     {
         public Concurs(long id, string proba, int varstaMin, int varstaMax, long[] participanti) : base(id)
         {
-            this.proba = proba;
-            this.varstaMin = varstaMin;
-            this.varstaMax = varstaMax;
-            this.participanti = participanti;
+            Proba = proba;
+            VarstaMin = varstaMin;
+            VarstaMax = varstaMax;
+            Participanti = participanti;
         }
 
-        public string Proba => proba;
+        public string Proba { get; }
 
-        public int VarstaMin => varstaMin;
+        public int VarstaMin { get; }
 
-        public int VarstaMax => varstaMax;
+        public int VarstaMax { get; }
 
-        public int NumarParticipanti => Participanti.Length;
-
-        public long[] Participanti
-        {
-            get => participanti;
-            set => participanti = value;
-        }
-    
-        private string proba;
-        private int varstaMin;
-        private int varstaMax;
-        private long[] participanti;
+        public long[] Participanti { get; set; }
     }
 }

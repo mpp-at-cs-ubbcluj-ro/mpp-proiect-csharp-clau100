@@ -2,13 +2,14 @@ namespace MPP_CSharp.Domain
 {
     public class User : Entity<long>
     {
-        private string username;
-        private string password;
-
         public User(long id, string username, string password) : base(id)
         {
-            this.username = username;
-            this.password = password;
+            Username = username;
+            Password = password;
         }
+
+        public string Username { get; }
+
+        public string Password { get; }
     }
 }

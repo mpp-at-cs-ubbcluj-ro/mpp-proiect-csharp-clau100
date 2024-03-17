@@ -9,24 +9,24 @@ namespace MPP_CSharp.Repository
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
 
-        private static readonly string ConnectionString =
-            @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
+        private const string ConnectionString = @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
+
         public List<Participant> GetAll()
         {
-            List<Participant> arr = new List<Participant>();
+            var arr = new List<Participant>();
             Log.Info("Fetching all Participanti from DB");
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand("SELECT * FROM Participant", connection))
+                using (var command = new SQLiteCommand("SELECT * FROM Participant", connection))
                 {
-                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            long id = reader.GetInt64(reader.GetOrdinal("id"));
-                            int varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
-                            Participant p = new Participant(id, varsta, new long[] { });
+                            var id = reader.GetInt64(reader.GetOrdinal("id"));
+                            var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                            var p = new Participant(id, varsta, new long[] { });
                             arr.Add(p);
                             Log.Info("Found participant with id="+id);
                         }
@@ -39,18 +39,18 @@ namespace MPP_CSharp.Repository
         public Participant Find(long id)
         {
             Log.Info("Trying to find Participant with id="+id);
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand(@"SELECT * FROM Participant where id = @id", connection))
+                using (var command = new SQLiteCommand(@"SELECT * FROM Participant where id = @id", connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
-                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            int varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
-                            Participant p = new Participant(id, varsta, new long[] { });
+                            var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                            var p = new Participant(id, varsta, new long[] { });
                             Log.Info("Found participant with id="+id);
                             return p;
                         }

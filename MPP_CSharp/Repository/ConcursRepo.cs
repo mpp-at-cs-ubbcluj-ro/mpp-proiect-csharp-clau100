@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Web.UI.WebControls;
 using log4net;
 using MPP_CSharp.Domain;
 
@@ -10,26 +9,26 @@ namespace MPP_CSharp.Repository
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
 
-        private static readonly string ConnectionString =
-            @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
+        private const string ConnectionString = @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
+
         public List<Concurs> GetAll()
         {
-            List<Concurs> arr = new List<Concurs>();
+            var arr = new List<Concurs>();
             Log.Info("Fetching all Concurs from DB");
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand("SELECT * FROM Concurs", connection))
+                using (var command = new SQLiteCommand("SELECT * FROM Concurs", connection))
                 {
-                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            long id = reader.GetInt64(reader.GetOrdinal("id"));
-                            string proba = reader.GetString(reader.GetOrdinal("Proba"));
-                            int varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
-                            int varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
-                            Concurs c = new Concurs(id, proba, varstaMin, varstaMax, new long[] { });
+                            var id = reader.GetInt64(reader.GetOrdinal("id"));
+                            var proba = reader.GetString(reader.GetOrdinal("Proba"));
+                            var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
+                            var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
+                            var c = new Concurs(id, proba, varstaMin, varstaMax, new long[] { });
                             arr.Add(c);
                             Log.Info("Found Concurs with id="+id);
                         }
@@ -42,20 +41,20 @@ namespace MPP_CSharp.Repository
         public Concurs Find(long id)
         {
             Log.Info("Trying to find Concurs with id="+id);
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand(@"SELECT * FROM Concurs where id = @id", connection))
+                using (var command = new SQLiteCommand(@"SELECT * FROM Concurs where id = @id", connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
-                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string proba = reader.GetString(reader.GetOrdinal("Proba"));
-                            int varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
-                            int varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
-                            Concurs c = new Concurs(id, proba, varstaMin, varstaMax, new long[] { });
+                            var proba = reader.GetString(reader.GetOrdinal("Proba"));
+                            var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
+                            var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
+                            var c = new Concurs(id, proba, varstaMin, varstaMax, new long[] { });
                             Log.Info("Found Concurs with id="+id);
                             return c;
                         }
