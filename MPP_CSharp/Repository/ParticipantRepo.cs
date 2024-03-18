@@ -5,31 +5,31 @@ using MPP_CSharp.Domain;
 
 namespace MPP_CSharp.Repository
 {
-    public class ParticipantRepo : IRepo<Participant, long>
+    public class ParticipantRepo : BdRepo, IParticipantRepo
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
 
-        private const string ConnectionString = @"Data Source=C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\DB.sqlite;";
-
+        public ParticipantRepo(bool testing) : base(testing)
+        {
+            Log.Info("Inizializing new ParticipantRepo...");
+        }
+        
         public List<Participant> GetAll()
         {
             var arr = new List<Participant>();
             Log.Info("Fetching all Participanti from DB");
-            using (var connection = new SQLiteConnection(ConnectionString))
+            var connection = GetConnection();
+            using (var command = new SQLiteCommand("SELECT * FROM Participant", connection))
             {
-                connection.Open();
-                using (var command = new SQLiteCommand("SELECT * FROM Participant", connection))
+                using (var reader = command.ExecuteReader())
                 {
-                    using (var reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            var id = reader.GetInt64(reader.GetOrdinal("id"));
-                            var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
-                            var p = new Participant(id, varsta, new long[] { });
-                            arr.Add(p);
-                            Log.Info("Found participant with id="+id);
-                        }
+                        var id = reader.GetInt64(reader.GetOrdinal("id"));
+                        var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                        var p = new Participant(id, varsta, new long[] { });
+                        arr.Add(p);
+                        Log.Info("Found participant with id="+id);
                     }
                 }
             }
@@ -39,21 +39,18 @@ namespace MPP_CSharp.Repository
         public Participant Find(long id)
         {
             Log.Info("Trying to find Participant with id="+id);
-            using (var connection = new SQLiteConnection(ConnectionString))
+            var connection = GetConnection();
+            using (var command = new SQLiteCommand(@"SELECT * FROM Participant where id = @id", connection))
             {
-                connection.Open();
-                using (var command = new SQLiteCommand(@"SELECT * FROM Participant where id = @id", connection))
+                command.Parameters.AddWithValue("@id", id);
+                using (var reader = command.ExecuteReader())
                 {
-                    command.Parameters.AddWithValue("@id", id);
-                    using (var reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
-                            var p = new Participant(id, varsta, new long[] { });
-                            Log.Info("Found participant with id="+id);
-                            return p;
-                        }
+                        var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                        var p = new Participant(id, varsta, new long[] { });
+                        Log.Info("Found participant with id=" + id);
+                        return p;
                     }
                 }
             }
@@ -74,6 +71,12 @@ namespace MPP_CSharp.Repository
         public void Update(Participant toUpdate)
         {
             throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<Participant> FindAllFromList(IEnumerable<long> participantIDs)
+        {
+            var lst = new LinkedList<Participant>();
+            return lst;
         }
     }
 }

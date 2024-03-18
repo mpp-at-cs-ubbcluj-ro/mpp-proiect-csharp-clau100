@@ -1,34 +1,183 @@
-2024-03-17 11:31:00,970 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-17 11:31:01,006 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-17 11:31:01,027 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-17 11:31:01,165 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
-2024-03-17 11:31:01,175 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
-2024-03-17 11:31:01,178 [1] ERROR MPP_CSharp.Form1 - No connection associated with this command
-2024-03-17 11:31:04,384 [1] INFO  MPP_CSharp.Form1 - Finished Form1
-2024-03-17 11:31:29,470 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-17 11:31:29,491 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-17 11:31:29,497 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-17 11:31:29,585 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
-2024-03-17 11:31:29,593 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
-2024-03-17 11:31:29,598 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no user with id=100
-2024-03-17 11:31:29,598 [1] INFO  MPP_CSharp.Form1 - Find works!
-2024-03-17 11:31:29,610 [1] INFO  MPP_CSharp.Form1 - Finished Form1
-2024-03-17 11:31:34,413 [1] INFO  MPP_CSharp.Program - Application closed
-2024-03-17 11:52:44,489 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-17 11:52:44,516 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-17 11:52:44,532 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-17 11:52:44,670 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
-2024-03-17 11:52:44,678 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
-2024-03-17 11:52:44,684 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no user with id=100
-2024-03-17 11:52:44,684 [1] INFO  MPP_CSharp.Form1 - Find works!
-2024-03-17 11:52:44,711 [1] INFO  MPP_CSharp.Form1 - Finished Form1
-2024-03-17 11:52:45,761 [1] INFO  MPP_CSharp.Program - Application closed
-2024-03-17 11:53:13,045 [1] INFO  MPP_CSharp.Program - Application started
-2024-03-17 11:53:13,074 [1] INFO  MPP_CSharp.Form1 - Starting Form1
-2024-03-17 11:53:13,081 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
-2024-03-17 11:53:13,193 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
-2024-03-17 11:53:13,200 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
-2024-03-17 11:53:13,208 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no user with id=100
-2024-03-17 11:53:13,208 [1] INFO  MPP_CSharp.Form1 - Find works!
-2024-03-17 11:53:13,220 [1] INFO  MPP_CSharp.Form1 - Finished Form1
-2024-03-17 11:53:14,455 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 13:13:48,340 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:13:48,361 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:13:48,366 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:13:48,453 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 13:13:48,460 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-18 13:13:48,468 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no user with id=100
+2024-03-18 13:13:48,468 [1] INFO  MPP_CSharp.Form1 - Find works!
+2024-03-18 13:13:48,478 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-18 13:13:57,713 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 13:32:58,932 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:34:32,229 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:35:21,309 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:35:21,332 [1] ERROR MPP_CSharp.Repository.BdRepo - Connection string is null!
+2024-03-18 13:35:21,332 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:35:21,336 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:35:21,352 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:35:21,352 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+2024-03-18 13:38:43,907 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:38:43,926 [1] ERROR MPP_CSharp.Repository.BdRepo - Connection string is null!
+2024-03-18 13:38:43,926 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:38:43,929 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:38:43,934 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:38:43,934 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+2024-03-18 13:40:02,136 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:40:02,155 [1] ERROR MPP_CSharp.Repository.BdRepo - Connection string is null!
+2024-03-18 13:40:02,155 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:40:02,159 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:40:02,165 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:40:02,165 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+2024-03-18 13:40:45,943 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:40:45,964 [1] ERROR MPP_CSharp.Repository.BdRepo - Connection string is null!
+2024-03-18 13:40:45,964 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:40:45,967 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:40:45,973 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:40:45,973 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+2024-03-18 13:41:20,952 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:41:20,971 [1] ERROR MPP_CSharp.Repository.BdRepo - Connection string is null!
+2024-03-18 13:41:20,971 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:41:20,975 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:41:20,980 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:41:20,980 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+
+2024-03-18 13:42:32,328 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:42:32,348 [1] ERROR MPP_CSharp.Repository.BdRepo - Connection string is null!
+2024-03-18 13:42:32,348 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:42:32,350 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:42:32,355 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:42:32,355 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+
+2024-03-18 13:43:09,013 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:43:55,811 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:45:35,326 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:45:35,345 [1] ERROR MPP_CSharp.Repository.BdRepo - Connection string is null or empty!
+2024-03-18 13:45:35,345 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:45:35,348 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:45:35,352 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:45:35,353 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+
+2024-03-18 13:47:25,167 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:47:49,552 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:47:49,572 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:47:49,576 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:47:49,581 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:47:49,581 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: 
+Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/DB.sqlite;
+2024-03-18 13:47:49,703 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 13:47:49,711 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-18 13:47:49,712 [1] ERROR MPP_CSharp.Form1 - Cannot access a disposed object.
+Object name: 'SQLiteConnection'.
+2024-03-18 13:47:49,725 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-18 13:48:01,452 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 13:48:22,444 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:48:22,464 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:48:22,468 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:48:22,472 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:48:22,473 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/DB.sqlite;
+2024-03-18 13:48:22,561 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 13:48:22,568 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-18 13:48:22,568 [1] ERROR MPP_CSharp.Form1 - Cannot access a disposed object.
+Object name: 'SQLiteConnection'.
+2024-03-18 13:48:22,578 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-18 13:48:25,448 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 13:49:34,035 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:49:34,056 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:49:34,060 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:49:34,065 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:49:34,065 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/DB.sqlite;
+2024-03-18 13:49:34,159 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 13:49:34,167 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-18 13:49:34,168 [1] ERROR MPP_CSharp.Form1 - Cannot access a disposed object.
+Object name: 'SQLiteConnection'.
+2024-03-18 13:49:34,178 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-18 13:49:35,414 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 13:54:13,068 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 13:54:13,087 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 13:54:13,090 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 13:54:13,095 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 13:54:13,095 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/DB.sqlite;
+2024-03-18 13:54:13,183 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 13:54:13,186 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-18 13:54:13,191 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no user with id=100
+2024-03-18 13:54:13,191 [1] INFO  MPP_CSharp.Form1 - Find works!
+2024-03-18 13:54:13,203 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-18 13:54:19,908 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 14:34:13,703 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 14:34:13,714 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 14:34:13,726 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 14:34:13,726 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/DB.sqlite;
+2024-03-18 14:34:13,815 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:34:13,818 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 14:34:13,823 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:34:13,824 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 14:34:13,824 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 14:34:13,825 [1] ERROR MPP_CSharp.Tests.TestParticipantRepo - GetAll does not work!
+2024-03-18 14:34:13,825 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 14:34:13,826 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no participant with id=1
+2024-03-18 14:36:26,784 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 14:36:26,794 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 14:36:26,806 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 14:36:26,806 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/DB.sqlite;
+2024-03-18 14:36:26,892 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:36:26,896 [1] ERROR MPP_CSharp.Tests.TestUserRepo - GetAll does not work!
+2024-03-18 14:36:26,896 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 14:36:26,901 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:36:26,902 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 14:36:26,902 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 14:36:26,903 [1] ERROR MPP_CSharp.Tests.TestParticipantRepo - GetAll does not work!
+2024-03-18 14:36:26,903 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 14:36:26,904 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no participant with id=1
+2024-03-18 14:37:32,105 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 14:38:41,642 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 14:38:41,653 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 14:38:41,664 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 14:38:41,665 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 14:38:41,756 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:38:41,756 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 14:38:41,759 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 14:38:41,764 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:38:41,764 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 14:38:41,765 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 14:38:41,766 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 14:38:41,766 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 14:38:41,767 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 14:38:41,767 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 14:38:41,768 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 14:38:41,769 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 14:38:41,769 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 14:38:41,769 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 14:38:41,770 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 14:38:41,770 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 14:38:41,770 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 14:38:41,772 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 14:38:41,775 [1] INFO  MPP_CSharp.Form1 - Starting Form1
+2024-03-18 14:38:41,775 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 14:38:41,776 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:38:41,776 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 14:38:41,776 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=100
+2024-03-18 14:38:41,776 [1] WARN  MPP_CSharp.Repository.UserRepo - Found no user with id=100
+2024-03-18 14:38:41,776 [1] INFO  MPP_CSharp.Form1 - Find works!
+2024-03-18 14:38:41,786 [1] INFO  MPP_CSharp.Form1 - Finished Form1
+2024-03-18 14:38:43,430 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 14:39:26,961 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 14:39:26,972 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 14:39:26,986 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 14:39:26,986 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 14:39:27,093 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:39:27,093 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 14:39:27,097 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 14:39:27,103 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 14:39:27,104 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 14:39:27,104 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 14:39:27,105 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 14:39:27,105 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 14:39:27,106 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 14:39:27,106 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 14:39:27,107 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 14:39:27,107 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 14:39:27,108 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 14:39:27,108 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 14:39:27,109 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 14:39:27,109 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 14:39:27,109 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 14:39:27,110 [1] INFO  MPP_CSharp.Program - Application closed

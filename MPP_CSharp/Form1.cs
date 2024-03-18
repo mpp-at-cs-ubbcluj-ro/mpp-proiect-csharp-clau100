@@ -9,7 +9,7 @@ namespace MPP_CSharp
     public partial class Form1 : Form
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(Form1));
-        private readonly UserRepo users = new UserRepo();
+        private readonly UserRepo users = new UserRepo(testing: false);
         public Form1()
         {
             Log.Info("Starting Form1");
