@@ -75,7 +75,30 @@ namespace MPP_CSharp.Repository
 
         public IEnumerable<Participant> FindAllFromList(IEnumerable<long> participantIDs)
         {
-            var lst = new LinkedList<Participant>();
+            Log.Info("Trying to find all Participant from list");
+            var lst = new List<Participant>();
+            var connection = GetConnection();
+            foreach (var id in participantIDs)
+            {
+                Log.Info("Trying to find Participant with id="+id);
+                using (var command = new SQLiteCommand("SELECT * FROM Participant WHERE id = @id", connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                            Log.Info("Found Participant with id="+id);
+                            lst.Add(new Participant(id, varsta, new long[] { }));
+                        }
+                        else
+                        {
+                            Log.Error("Could not find Participant with id="+id);
+                        }
+                    }
+                }
+            }
             return lst;
         }
     }

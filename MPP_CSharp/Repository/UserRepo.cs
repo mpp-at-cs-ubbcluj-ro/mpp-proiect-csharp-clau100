@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Windows.Forms.VisualStyles;
 using log4net;
 using MPP_CSharp.Domain;
 
@@ -78,10 +79,33 @@ namespace MPP_CSharp.Repository
             throw new System.NotImplementedException();
         }
 
-        public User FindUserByUsername(string username)
+        public bool CheckUser(string username, string password)
         {
-            Log.Info("Trying to find User: "+username);
-            throw new System.NotImplementedException();
+            Log.Info("Trying to login User: "+username);
+            var connection = GetConnection();
+            using (var command =
+                   new SQLiteCommand("SELECT * FROM User WHERE Username = @Username", connection))
+            {
+                command.Parameters.AddWithValue("@Username", username);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        var stored = reader.GetString(reader.GetOrdinal("Password"));
+                        var result = SecurePasswordHasher.Verify(password, stored);
+                        if (result)
+                        {
+                            Log.Info("Logged in!");
+                            return true;
+                        }
+
+                        Log.Error("Wrong password!");
+                        return false;
+                    }
+                    Log.Error("Could not find User: "+username);
+                    return false;
+                }
+            }
         }
     }
 }

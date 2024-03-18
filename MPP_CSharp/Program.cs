@@ -24,6 +24,7 @@ namespace MPP_CSharp
             {
                 throw new TestingException("Tests failed!");
             }
+
             Log.Info("Application started");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

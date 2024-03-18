@@ -1,3 +1,4 @@
+using System.Linq;
 using log4net;
 using MPP_CSharp.Repository;
 
@@ -12,6 +13,7 @@ namespace MPP_CSharp.Tests
             var concursuri = new ConcursRepo(true);
             var ok = TestGetAll(concursuri);
             ok &= TestFind(concursuri);
+            ok &= TestFindAllForAge(concursuri);
             return ok;
         }
 
@@ -48,6 +50,25 @@ namespace MPP_CSharp.Tests
                 Log.Error("Find does not work!");
                 return false;
             }
+            return true;
+        }
+
+        private static bool TestFindAllForAge(ConcursRepo concursuri)
+        {
+            try
+            {
+                var all = concursuri.FindAllForAge(12);
+                if (all.Count() != 2)
+                {
+                    throw new TestingException();
+                }
+            }
+            catch (TestingException)
+            {
+                Log.Error("FindAllForAge does not work!");
+                return false;
+            }
+
             return true;
         }
     }

@@ -11,6 +11,7 @@ namespace MPP_CSharp.Tests
             var users = new UserRepo(true);
             var ok = TestGetAll(users);
             ok &= TestFind(users);
+            ok &= TestCheckUser(users);
             return ok;
         }
 
@@ -38,7 +39,7 @@ namespace MPP_CSharp.Tests
             try
             {
                 var u = users.Find(1);
-                if (u.Id != 1 || u.Username != "claudiu" || u.Password != "ubb123")
+                if (u.Id != 1 || u.Username != "claudiu")
                 {
                     throw new TestingException();
                 }
@@ -46,6 +47,25 @@ namespace MPP_CSharp.Tests
             catch (TestingException)
             {
                 Log.Error("Find does not work!");
+                return false;
+            }
+
+            return true;
+        }
+
+        private static bool TestCheckUser(UserRepo users)
+        {
+            try
+            {
+                bool ok = users.CheckUser("claudiu", "ubb123");
+                if (!ok)
+                {
+                    throw new TestingException();
+                }
+            }
+            catch (TestingException)
+            {
+                Log.Error("CheckUser does not work!");
                 return false;
             }
 

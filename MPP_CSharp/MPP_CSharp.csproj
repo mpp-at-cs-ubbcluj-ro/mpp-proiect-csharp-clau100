@@ -87,6 +87,7 @@
         <Compile Include="Repository\IRepo.cs" />
         <Compile Include="Repository\IUserRepo.cs" />
         <Compile Include="Repository\ParticipantRepo.cs" />
+        <Compile Include="Repository\SecurePasswordHasher.cs" />
         <Compile Include="Repository\UserRepo.cs" />
         <Compile Include="Tests\TestConcursRepo.cs" />
         <Compile Include="Tests\TestingException.cs" />

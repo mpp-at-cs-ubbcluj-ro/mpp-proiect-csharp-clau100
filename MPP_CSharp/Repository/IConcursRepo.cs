@@ -5,7 +5,7 @@ namespace MPP_CSharp.Repository
 {
     public interface IConcursRepo : IRepo<Concurs, long>
     {
-        IEnumerable<Concurs> FindAllFromAgeRange(int minAge, int maxAge);
+        IEnumerable<Concurs> FindAllForAge(int age);
         
     }
 }

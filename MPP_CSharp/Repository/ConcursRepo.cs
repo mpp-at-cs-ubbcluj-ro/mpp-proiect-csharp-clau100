@@ -76,9 +76,27 @@ namespace MPP_CSharp.Repository
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Concurs> FindAllFromAgeRange(int minAge, int maxAge)
+        public IEnumerable<Concurs> FindAllForAge(int age)
         {
-            var lst = new LinkedList<Concurs>();
+            Log.Info("Trying to find all Concurs for age: "+age);
+            var lst = new List<Concurs>();
+            var connection = GetConnection();
+            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs WHERE @age >= VarstaMin and @age <= VarstaMax", connection))
+            {
+                command.Parameters.AddWithValue("@age", age);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var id = reader.GetInt64(reader.GetOrdinal("id"));
+                        var proba = reader.GetString(reader.GetOrdinal("Proba"));
+                        var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
+                        var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
+                        Log.Info("Found concurs with id="+id);
+                        lst.Add(new Concurs(id, proba, varstaMin, varstaMax, new long[]{ }));
+                    }
+                }
+            }
             return lst;
         }
     }

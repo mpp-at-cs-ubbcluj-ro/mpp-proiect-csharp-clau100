@@ -181,3 +181,303 @@ Object name: 'SQLiteConnection'.
 2024-03-18 14:39:27,109 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
 2024-03-18 14:39:27,109 [1] INFO  MPP_CSharp.Program - Application started
 2024-03-18 14:39:27,110 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 16:39:02,465 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 16:39:02,485 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 16:39:02,502 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 16:39:02,503 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 16:39:02,615 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:39:02,616 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 16:39:02,619 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 16:39:02,625 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:39:02,626 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 16:39:02,694 [1] INFO  MPP_CSharp.Repository.UserRepo - Hashed 'ubb123' is: '$MYHASH$V1$10000$FbPqalwoFdZY6G8aQ2Ks3duVNrLLNbw5XKkefdCFMf2TJz8F'
+2024-03-18 16:39:02,695 [1] INFO  MPP_CSharp.Repository.UserRepo - Found User!
+2024-03-18 16:39:02,696 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 16:39:02,697 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 16:39:02,698 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:39:02,698 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 16:39:02,699 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 16:39:02,699 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:39:02,700 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 16:39:02,701 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 16:39:02,702 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 16:39:02,702 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:39:02,703 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 16:39:02,703 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:39:02,704 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 16:39:02,706 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 16:39:47,959 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 16:39:47,972 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 16:39:47,987 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 16:39:47,987 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 16:39:48,090 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:39:48,090 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 16:39:48,093 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 16:39:48,099 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:39:48,103 [1] ERROR MPP_CSharp.Tests.TestUserRepo - Find does not work!
+2024-03-18 16:39:48,104 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 16:39:48,167 [1] INFO  MPP_CSharp.Repository.UserRepo - Hashed 'ubb122' is: '$MYHASH$V1$10000$HMBvvrMvzgsmU9kutKS2Ugr/RbPotDhIklKrGh3Igv72sWZT'
+2024-03-18 16:39:48,168 [1] ERROR MPP_CSharp.Repository.UserRepo - Could not find User: claudiu
+2024-03-18 16:39:48,168 [1] ERROR MPP_CSharp.Tests.TestUserRepo - CheckUser does not work!
+2024-03-18 16:39:48,169 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 16:39:48,169 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 16:39:48,170 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:39:48,170 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 16:39:48,171 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 16:39:48,171 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:39:48,172 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 16:39:48,173 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 16:39:48,173 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 16:39:48,173 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:39:48,175 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 16:39:48,176 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:41:01,599 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 16:41:01,611 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 16:41:01,625 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 16:41:01,625 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 16:41:01,714 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:41:01,714 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 16:41:01,717 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 16:41:01,725 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:41:01,725 [1] ERROR MPP_CSharp.Tests.TestUserRepo - Find does not work!
+2024-03-18 16:41:01,726 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 16:41:01,789 [1] ERROR MPP_CSharp.Repository.UserRepo - Could not find User: claudiu
+2024-03-18 16:41:01,790 [1] ERROR MPP_CSharp.Tests.TestUserRepo - CheckUser does not work!
+2024-03-18 16:41:01,790 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 16:41:01,791 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 16:41:01,793 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:41:01,793 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 16:41:01,794 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 16:41:01,794 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:41:01,795 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 16:41:01,797 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 16:41:01,798 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 16:41:01,798 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:41:01,799 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 16:41:01,800 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:41:45,357 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 16:41:45,376 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 16:41:45,398 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 16:41:45,398 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 16:41:45,542 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:41:45,543 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 16:41:45,547 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 16:41:45,555 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:41:45,556 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 16:41:45,622 [1] ERROR MPP_CSharp.Repository.UserRepo - Could not find User: claudiu
+2024-03-18 16:41:45,623 [1] ERROR MPP_CSharp.Tests.TestUserRepo - CheckUser does not work!
+2024-03-18 16:41:45,623 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 16:41:45,624 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 16:41:45,627 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:41:45,627 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 16:41:45,628 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 16:41:45,628 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:41:45,629 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 16:41:45,629 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 16:41:45,630 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 16:41:45,630 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:41:45,631 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 16:41:45,631 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:43:12,776 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 16:43:12,788 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 16:43:12,802 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 16:43:12,802 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 16:43:12,897 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:43:12,898 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 16:43:12,901 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 16:43:12,907 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:43:12,908 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 16:43:12,968 [1] INFO  MPP_CSharp.Repository.UserRepo - Hashed password: $MYHASH$V1$10000$gmBgM3oAWKi2YyL6nJfoL5aHdtr7g3J9c808pRK8v5N15zD9
+2024-03-18 16:43:12,969 [1] ERROR MPP_CSharp.Repository.UserRepo - Could not find User: claudiu
+2024-03-18 16:43:12,970 [1] ERROR MPP_CSharp.Tests.TestUserRepo - CheckUser does not work!
+2024-03-18 16:43:12,970 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 16:43:12,971 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 16:43:12,972 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:43:12,972 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 16:43:12,973 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 16:43:12,973 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:43:12,974 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 16:43:12,975 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 16:43:12,976 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 16:43:12,976 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:43:12,977 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 16:43:12,977 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:46:10,052 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 16:46:10,064 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 16:46:10,079 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 16:46:10,079 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 16:46:10,173 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:46:10,173 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 16:46:10,176 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 16:46:10,182 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 16:46:10,183 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 16:46:10,285 [1] INFO  MPP_CSharp.Repository.UserRepo - Logged in!
+2024-03-18 16:46:10,286 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 16:46:10,286 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 16:46:10,288 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:46:10,288 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 16:46:10,288 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 16:46:10,289 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 16:46:10,289 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 16:46:10,291 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 16:46:10,292 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 16:46:10,292 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:46:10,294 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 16:46:10,294 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 16:46:10,294 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 16:46:10,295 [1] INFO  MPP_CSharp.Program - Application closed
+2024-03-18 17:12:38,716 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 17:12:38,728 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 17:12:38,744 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 17:12:38,744 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 17:12:38,867 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:12:38,868 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 17:12:38,873 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 17:12:38,879 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:12:38,880 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 17:12:38,943 [1] INFO  MPP_CSharp.Repository.UserRepo - Logged in!
+2024-03-18 17:12:38,944 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 17:12:38,945 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 17:12:38,946 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:12:38,946 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 17:12:38,946 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:12:38,946 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:12:38,948 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Participant from list
+2024-03-18 17:14:23,658 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 17:14:23,678 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 17:14:23,697 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 17:14:23,698 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 17:14:23,798 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:14:23,798 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 17:14:23,801 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 17:14:23,806 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:14:23,807 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 17:14:23,865 [1] INFO  MPP_CSharp.Repository.UserRepo - Logged in!
+2024-03-18 17:14:23,866 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 17:14:23,867 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 17:14:23,868 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:14:23,868 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 17:14:23,868 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:14:23,869 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:14:23,870 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Participant from list
+2024-03-18 17:14:23,870 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:14:49,323 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 17:14:49,337 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 17:14:49,348 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 17:14:49,349 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 17:14:49,445 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:14:49,445 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 17:14:49,448 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 17:14:49,453 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:14:49,454 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 17:14:49,510 [1] INFO  MPP_CSharp.Repository.UserRepo - Logged in!
+2024-03-18 17:14:49,511 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 17:14:49,512 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 17:14:49,513 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:14:49,513 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 17:14:49,514 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:14:49,514 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:14:49,515 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Participant from list
+2024-03-18 17:14:49,515 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:14:49,516 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=1
+2024-03-18 17:14:49,516 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=2
+2024-03-18 17:14:49,516 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=2
+2024-03-18 17:14:49,516 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 17:14:49,518 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 17:14:49,518 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 17:14:49,518 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:14:49,519 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 17:14:49,519 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:14:49,521 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Concurs for age: 12
+2024-03-18 17:16:03,616 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 17:16:03,630 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 17:16:03,647 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 17:16:03,648 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 17:16:03,743 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:16:03,744 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 17:16:03,748 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 17:16:03,757 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:16:03,758 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 17:16:03,846 [1] INFO  MPP_CSharp.Repository.UserRepo - Logged in!
+2024-03-18 17:16:03,847 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 17:16:03,848 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 17:16:03,850 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:16:03,850 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 17:16:03,851 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:16:03,851 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:16:03,853 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Participant from list
+2024-03-18 17:16:03,853 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:16:03,853 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=1
+2024-03-18 17:16:03,853 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=2
+2024-03-18 17:16:03,853 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=2
+2024-03-18 17:16:03,854 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 17:16:03,856 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 17:16:03,857 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 17:16:03,857 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:16:03,858 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 17:16:03,859 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:16:03,860 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Concurs for age: 12
+2024-03-18 17:16:03,866 [1] ERROR MPP_CSharp.Tests.TestConcursRepo - FindAllForAge does not work!
+2024-03-18 17:16:50,181 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 17:16:50,208 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 17:16:50,231 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 17:16:50,231 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 17:16:50,381 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:16:50,381 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 17:16:50,385 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 17:16:50,391 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:16:50,392 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 17:16:50,461 [1] INFO  MPP_CSharp.Repository.UserRepo - Logged in!
+2024-03-18 17:16:50,462 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 17:16:50,462 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 17:16:50,464 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:16:50,464 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 17:16:50,464 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:16:50,465 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:16:50,466 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Participant from list
+2024-03-18 17:16:50,466 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:16:50,467 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=1
+2024-03-18 17:16:50,467 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=2
+2024-03-18 17:16:50,467 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=2
+2024-03-18 17:16:50,467 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 17:16:50,468 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 17:16:50,469 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 17:16:50,469 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:16:50,470 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 17:16:50,470 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:16:50,471 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Concurs for age: 12
+2024-03-18 17:16:50,472 [1] INFO  MPP_CSharp.Repository.UserRepo - Found concurs with id=1
+2024-03-18 17:16:50,472 [1] INFO  MPP_CSharp.Repository.UserRepo - Found concurs with id=2
+2024-03-18 17:16:50,473 [1] ERROR MPP_CSharp.Tests.TestConcursRepo - FindAllForAge does not work!
+2024-03-18 17:17:02,005 [1] INFO  MPP_CSharp.Program - Testing...
+2024-03-18 17:17:02,023 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing new UserRepo...
+2024-03-18 17:17:02,040 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Users from DB
+2024-03-18 17:17:02,040 [1] INFO  MPP_CSharp.Repository.BdRepo - Trying to open Connection to server: Data Source=C:/Users/user/RiderProjects/mpp-proiect-csharp-clau100/MPP_CSharp/Testing.sqlite;
+2024-03-18 17:17:02,148 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:17:02,148 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=2
+2024-03-18 17:17:02,151 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find User with id=1
+2024-03-18 17:17:02,156 [1] INFO  MPP_CSharp.Repository.UserRepo - Found user with id=1
+2024-03-18 17:17:02,157 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to login User: claudiu
+2024-03-18 17:17:02,211 [1] INFO  MPP_CSharp.Repository.UserRepo - Logged in!
+2024-03-18 17:17:02,212 [1] INFO  MPP_CSharp.Repository.UserRepo - Inizializing new ParticipantRepo...
+2024-03-18 17:17:02,213 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Participanti from DB
+2024-03-18 17:17:02,214 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:17:02,214 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=2
+2024-03-18 17:17:02,215 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:17:02,216 [1] INFO  MPP_CSharp.Repository.UserRepo - Found participant with id=1
+2024-03-18 17:17:02,217 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Participant from list
+2024-03-18 17:17:02,217 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=1
+2024-03-18 17:17:02,217 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=1
+2024-03-18 17:17:02,217 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Participant with id=2
+2024-03-18 17:17:02,217 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Participant with id=2
+2024-03-18 17:17:02,218 [1] INFO  MPP_CSharp.Repository.UserRepo - Initializing ConcursRepo...
+2024-03-18 17:17:02,219 [1] INFO  MPP_CSharp.Repository.UserRepo - Fetching all Concurs from DB
+2024-03-18 17:17:02,220 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=1
+2024-03-18 17:17:02,220 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:17:02,221 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find Concurs with id=2
+2024-03-18 17:17:02,221 [1] INFO  MPP_CSharp.Repository.UserRepo - Found Concurs with id=2
+2024-03-18 17:17:02,223 [1] INFO  MPP_CSharp.Repository.UserRepo - Trying to find all Concurs for age: 12
+2024-03-18 17:17:02,223 [1] INFO  MPP_CSharp.Repository.UserRepo - Found concurs with id=1
+2024-03-18 17:17:02,223 [1] INFO  MPP_CSharp.Repository.UserRepo - Found concurs with id=2
+2024-03-18 17:17:02,223 [1] INFO  MPP_CSharp.Program - Application started
+2024-03-18 17:17:02,225 [1] INFO  MPP_CSharp.Program - Application closed

@@ -4,7 +4,7 @@ namespace MPP_CSharp.Repository
 {
     public interface IUserRepo : IRepo<User, long>
     {
-        User FindUserByUsername(string username);
+        bool CheckUser(string username, string password);
         
     }
 }
