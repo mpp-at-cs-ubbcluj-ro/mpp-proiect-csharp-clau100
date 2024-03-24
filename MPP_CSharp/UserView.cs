@@ -9,11 +9,21 @@ namespace MPP_CSharp
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserView));
         private readonly ConcursService _concursService;
+        private readonly ParticipantService _participantService;
         public UserView()
         {
-            InitializeComponent();
+            Log.Info("Starting UserView...");
             var ctx = ContextRegistry.GetContext();
             _concursService =(ConcursService) ctx.GetObject("concursSrv");
+            _participantService = (ParticipantService)ctx.GetObject("participantSrv");
+            InitializeComponent();
+            ReloadGridView();
+            Log.Info("Closing UserView...");
+        }
+
+        private void ReloadGridView()
+        {
+            concursuriGrid.DataSource = _concursService.GetAll();
         }
     }
 }

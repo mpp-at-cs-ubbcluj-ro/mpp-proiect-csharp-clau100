@@ -38,6 +38,10 @@ namespace MPP_CSharp
             if (loginError.Visible) return;
             
             // login the user
+            usernameInput.Text = "";
+            passwordInput.Text = "";
+            Form f = new UserView();
+            f.Show();
         }
     }
 }

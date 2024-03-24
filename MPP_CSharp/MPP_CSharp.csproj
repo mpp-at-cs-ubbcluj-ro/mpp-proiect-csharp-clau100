@@ -128,6 +128,7 @@
         <Compile Include="Repository\SecurePasswordHasher.cs" />
         <Compile Include="Repository\UserRepo.cs" />
         <Compile Include="Service\ConcursService.cs" />
+        <Compile Include="Service\ParticipantService.cs" />
         <Compile Include="Service\UserService.cs" />
         <Compile Include="Tests\TestConcursRepo.cs" />
         <Compile Include="Tests\TestingException.cs" />
