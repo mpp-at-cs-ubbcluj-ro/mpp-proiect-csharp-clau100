@@ -9,7 +9,7 @@ namespace MPP_CSharp.Repository
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
 
-        public UserRepo(bool testing) : base(testing)
+        public UserRepo(bool testing = false) : base(testing)
         {
             Log.Info("Initializing new UserRepo...");
         }

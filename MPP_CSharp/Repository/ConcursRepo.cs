@@ -9,7 +9,7 @@ namespace MPP_CSharp.Repository
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(ConcursRepo));
 
-        public ConcursRepo(bool testing) : base(testing)
+        public ConcursRepo(bool testing = false) : base(testing)
         {
             Log.Info("Initializing ConcursRepo...");
         }

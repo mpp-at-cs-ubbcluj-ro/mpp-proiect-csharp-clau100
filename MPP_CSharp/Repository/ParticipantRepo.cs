@@ -10,7 +10,7 @@ namespace MPP_CSharp.Repository
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(ParticipantRepo));
 
-        public ParticipantRepo(bool testing) : base(testing)
+        public ParticipantRepo(bool testing = false) : base(testing)
         {
             Log.Info("Inizializing new ParticipantRepo...");
         }
@@ -28,6 +28,7 @@ namespace MPP_CSharp.Repository
                     {
                         var id = reader.GetInt64(reader.GetOrdinal("id"));
                         var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
+                        var nume = reader.GetString(reader.GetOrdinal("Nume"));
                         var concurs = reader.GetInt64(reader.GetOrdinal("concurs"));
                         var found = false;
                         foreach (var t in arr.Where(t => t.Id == id))
@@ -38,7 +39,7 @@ namespace MPP_CSharp.Repository
 
                         if (found) continue;
                         var lst = new List<long> { concurs };
-                        var p = new Participant(id, varsta, lst);
+                        var p = new Participant(id, varsta, nume,lst);
                         arr.Add(p);
                         Log.Info("Found participant with id="+id+" and concurs with id="+concurs);
                     }
@@ -61,9 +62,10 @@ namespace MPP_CSharp.Repository
                     {
                         var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
                         var concurs = reader.GetInt64(reader.GetOrdinal("concurs"));
+                        var nume = reader.GetString(reader.GetOrdinal("Nume"));
                         if (p is null)
                         {
-                            p = new Participant(id, varsta, new List<long>());
+                            p = new Participant(id, varsta, nume, new List<long>());
                         }
                         p.Concursuri.Add(concurs);
                         Log.Info("Found participant with id=" + id);

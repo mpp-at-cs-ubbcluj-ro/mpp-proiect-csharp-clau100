@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using log4net;
 using log4net.Config;
 using MPP_CSharp.Tests;
+using Spring.Context.Support;
+using MPP_CSharp.Service;
 
 namespace MPP_CSharp
 {
@@ -16,6 +18,24 @@ namespace MPP_CSharp
         private static void Main()
         {
             XmlConfigurator.Configure(new System.IO.FileInfo("../../LoggerConfig.xml"));
+            var ctx = ContextRegistry.GetContext();
+            
+            RunTests();
+
+            Log.Info("Application started");
+            var userSrv = (UserService)ctx.GetObject("userSrv");
+            foreach (var usr in userSrv.GetAll())
+            {
+                Log.Info(usr.Username);
+            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+            Log.Info("Application closed");
+        }
+
+        private static void RunTests()
+        {
             Log.Info("Testing...");
             var ok =TestUserRepo.TestAll();
             ok &= TestParticipantRepo.TestAll();
@@ -24,12 +44,6 @@ namespace MPP_CSharp
             {
                 throw new TestingException("Tests failed!");
             }
-
-            Log.Info("Application started");
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            Log.Info("Application closed");
         }
     }
 }
