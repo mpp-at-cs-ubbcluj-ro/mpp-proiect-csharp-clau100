@@ -26,14 +26,12 @@ namespace MPP_CSharp.Repository
                     {
                         var id = reader.GetInt64(reader.GetOrdinal("id"));
                         var found = false;
-                        for (int i = 0; i < arr.Count; i++)
+                        foreach (var t in arr)
                         {
-                            if (arr[i].Id != id) continue;
-                            var newParticipanti = arr[i].Participanti;
+                            if (t.Id != id) continue;
                             var participantId = reader.GetInt64(reader.GetOrdinal("participant"));
                             Log.Info("Participant cu id="+participantId);
-                            newParticipanti.Add(participantId);
-                            arr[i].Participanti = newParticipanti;
+                            t.Participanti.Add(participantId);
                             found = true;
                         }
 
@@ -46,8 +44,7 @@ namespace MPP_CSharp.Repository
                         var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
                         var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
                         var pId = reader.GetInt64(reader.GetOrdinal("participant"));
-                        var lst = new List<long>();
-                        lst.Add(pId);
+                        var lst = new List<long> { pId };
                         var c = new Concurs(id, proba, varstaMin, varstaMax, lst);
                         
                         arr.Add(c);
@@ -67,7 +64,6 @@ namespace MPP_CSharp.Repository
                 command.Parameters.AddWithValue("@id", id);
                 using (var reader = command.ExecuteReader())
                 {
-                    var created = false;
                     Concurs concurs = null;
                     while (reader.Read())
                     {
@@ -80,9 +76,7 @@ namespace MPP_CSharp.Repository
                         }
 
                         var participant = reader.GetInt64(reader.GetOrdinal("concurs"));
-                        var newList = concurs.Participanti;
-                        newList.Add(participant);
-                        concurs.Participanti = newList;
+                        concurs.Participanti.Add(participant);
                         Log.Info("Found Concurs with id="+id+" and with participant="+participant);
                     }
 
@@ -124,13 +118,11 @@ namespace MPP_CSharp.Repository
                     {
                         var id = reader.GetInt64(reader.GetOrdinal("id"));
                         var found = false;
-                        for (int i = 0; i < arr.Count; i++)
+                        foreach (var t in arr)
                         {
-                            if (arr[i].Id != id) continue;
-                            var newParticipanti = arr[i].Participanti;
-                            var participantID = reader.GetInt64(reader.GetOrdinal("participant"));
-                            newParticipanti.Add(participantID);
-                            arr[i].Participanti = newParticipanti;
+                            if (t.Id != id) continue;
+                            var participantId = reader.GetInt64(reader.GetOrdinal("participant"));
+                            t.Participanti.Add(participantId);
                             found = true;
                         }
 
@@ -143,8 +135,7 @@ namespace MPP_CSharp.Repository
                         var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
                         var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
                         var pId = reader.GetInt64(reader.GetOrdinal("participant"));
-                        var lst = new List<long>();
-                        lst.Add(pId);
+                        var lst = new List<long> { pId };
                         var c = new Concurs(id, proba, varstaMin, varstaMax, lst);
                         
                         arr.Add(c);

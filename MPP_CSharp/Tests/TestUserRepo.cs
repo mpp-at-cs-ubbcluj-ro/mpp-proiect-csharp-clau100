@@ -1,4 +1,5 @@
 using log4net;
+using MPP_CSharp.Domain;
 using MPP_CSharp.Repository;
 
 namespace MPP_CSharp.Tests
@@ -53,11 +54,11 @@ namespace MPP_CSharp.Tests
             return true;
         }
 
-        private static bool TestCheckUser(UserRepo users)
+        private static bool TestCheckUser(IUserRepo users)
         {
             try
             {
-                bool ok = users.CheckUser("claudiu", "ubb123");
+                var ok = users.CheckUser(new User(1, "claudiu", "ubb123"));
                 if (!ok)
                 {
                     throw new TestingException();

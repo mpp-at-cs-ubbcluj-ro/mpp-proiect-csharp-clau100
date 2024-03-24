@@ -8,7 +8,7 @@ namespace MPP_CSharp.Repository
         private const int SaltSize = 16;
         private const int HashSize = 20;
 
-        public static string Hash(string password, int iterations)
+        private static string Hash(string password, int iterations)
         {
             // Create salt
             byte[] salt;
@@ -27,15 +27,15 @@ namespace MPP_CSharp.Repository
             var base64Hash = Convert.ToBase64String(hashBytes);
 
             // Format hash with extra information
-            return string.Format("$MYHASH$V1${0}${1}", iterations, base64Hash);
+            return $"$MYHASH$V1${iterations}${base64Hash}";
         }
         
         public static string Hash(string password)
         {
             return Hash(password, 10000);
         }
-        
-        public static bool IsHashSupported(string hashString)
+
+        private static bool IsHashSupported(string hashString)
         {
             return hashString.Contains("$MYHASH$V1$");
         }
@@ -62,7 +62,7 @@ namespace MPP_CSharp.Repository
 
             // Create hash with given salt
             var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
-            byte[] hash = pbkdf2.GetBytes(HashSize);
+            var hash = pbkdf2.GetBytes(HashSize);
 
             // Get result
             for (var i = 0; i < HashSize; i++)

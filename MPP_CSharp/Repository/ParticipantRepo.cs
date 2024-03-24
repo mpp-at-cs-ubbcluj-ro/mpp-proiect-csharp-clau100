@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 using log4net;
 using MPP_CSharp.Domain;
 
@@ -29,18 +30,14 @@ namespace MPP_CSharp.Repository
                         var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
                         var concurs = reader.GetInt64(reader.GetOrdinal("concurs"));
                         var found = false;
-                        for (int i = 0; i < arr.Count; i++)
+                        foreach (var t in arr.Where(t => t.Id == id))
                         {
-                            if (arr[i].Id != id) continue;
-                            var newLst = arr[i].Concursuri;
-                            newLst.Add(concurs);
-                            arr[i].Concursuri = newLst;
+                            t.Concursuri.Add(concurs);
                             found = true;
                         }
 
                         if (found) continue;
-                        var lst = new List<long>();
-                        lst.Add(concurs);
+                        var lst = new List<long> { concurs };
                         var p = new Participant(id, varsta, lst);
                         arr.Add(p);
                         Log.Info("Found participant with id="+id+" and concurs with id="+concurs);
@@ -68,9 +65,7 @@ namespace MPP_CSharp.Repository
                         {
                             p = new Participant(id, varsta, new List<long>());
                         }
-                        var newLst = p.Concursuri;
-                        newLst.Add(concurs);
-                        p.Concursuri = newLst;
+                        p.Concursuri.Add(concurs);
                         Log.Info("Found participant with id=" + id);
                         return p;
                     }
@@ -99,7 +94,6 @@ namespace MPP_CSharp.Repository
         {
             Log.Info("Trying to find all Participant from list");
             var lst = new List<Participant>();
-            var connection = GetConnection();
             foreach (var id in participantIDs)
             {
                 Log.Info("Trying to find Participant with id="+id);

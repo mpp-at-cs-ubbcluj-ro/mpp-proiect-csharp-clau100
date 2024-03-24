@@ -64,7 +64,7 @@ namespace MPP_CSharp.Tests
             return true;
         }
 
-        private static bool TestFindAllForAge(ConcursRepo concursuri)
+        private static bool TestFindAllForAge(IConcursRepo concursuri)
         {
             try
             {

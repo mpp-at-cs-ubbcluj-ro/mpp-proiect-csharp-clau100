@@ -56,9 +56,9 @@ namespace MPP_CSharp.Tests
             return true;
         }
 
-        private static bool TestFindFromList(ParticipantRepo participanti)
+        private static bool TestFindFromList(IParticipantRepo participanti)
         {
-            List<long> inputs = new List<long>{ 1, 2 };
+            var inputs = new List<long>{ 1, 2 };
             try
             {
                 var found = participanti.FindAllFromList(inputs);
