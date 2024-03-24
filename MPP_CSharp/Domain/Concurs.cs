@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+
 namespace MPP_CSharp.Domain
 {
     public class Concurs : Entity<long>
     {
-        public Concurs(long id, string proba, int varstaMin, int varstaMax, long[] participanti) : base(id)
+        public Concurs(long id, string proba, int varstaMin, int varstaMax, List<long> participanti) : base(id)
         {
             Proba = proba;
             VarstaMin = varstaMin;
@@ -16,6 +18,6 @@ namespace MPP_CSharp.Domain
 
         public int VarstaMax { get; }
 
-        public long[] Participanti { get; set; }
+        public List<long> Participanti { get; set; }
     }
 }

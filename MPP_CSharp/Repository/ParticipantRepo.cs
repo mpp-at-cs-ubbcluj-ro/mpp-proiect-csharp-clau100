@@ -7,7 +7,7 @@ namespace MPP_CSharp.Repository
 {
     public class ParticipantRepo : BdRepo, IParticipantRepo
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ParticipantRepo));
 
         public ParticipantRepo(bool testing) : base(testing)
         {
@@ -19,7 +19,7 @@ namespace MPP_CSharp.Repository
             var arr = new List<Participant>();
             Log.Info("Fetching all Participanti from DB");
             var connection = GetConnection();
-            using (var command = new SQLiteCommand("SELECT * FROM Participant", connection))
+            using (var command = new SQLiteCommand("SELECT * FROM Participant p INNER JOIN Inscrieri I on p.id = i.participant", connection))
             {
                 using (var reader = command.ExecuteReader())
                 {
@@ -27,9 +27,23 @@ namespace MPP_CSharp.Repository
                     {
                         var id = reader.GetInt64(reader.GetOrdinal("id"));
                         var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
-                        var p = new Participant(id, varsta, new long[] { });
+                        var concurs = reader.GetInt64(reader.GetOrdinal("concurs"));
+                        var found = false;
+                        for (int i = 0; i < arr.Count; i++)
+                        {
+                            if (arr[i].Id != id) continue;
+                            var newLst = arr[i].Concursuri;
+                            newLst.Add(concurs);
+                            arr[i].Concursuri = newLst;
+                            found = true;
+                        }
+
+                        if (found) continue;
+                        var lst = new List<long>();
+                        lst.Add(concurs);
+                        var p = new Participant(id, varsta, lst);
                         arr.Add(p);
-                        Log.Info("Found participant with id="+id);
+                        Log.Info("Found participant with id="+id+" and concurs with id="+concurs);
                     }
                 }
             }
@@ -40,15 +54,23 @@ namespace MPP_CSharp.Repository
         {
             Log.Info("Trying to find Participant with id="+id);
             var connection = GetConnection();
-            using (var command = new SQLiteCommand(@"SELECT * FROM Participant where id = @id", connection))
+            using (var command = new SQLiteCommand(@"SELECT * FROM Participant p INNER JOIN Inscrieri I on p.id = i.participant where p.id = @id", connection))
             {
                 command.Parameters.AddWithValue("@id", id);
                 using (var reader = command.ExecuteReader())
                 {
+                    Participant p = null;
                     while (reader.Read())
                     {
                         var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
-                        var p = new Participant(id, varsta, new long[] { });
+                        var concurs = reader.GetInt64(reader.GetOrdinal("concurs"));
+                        if (p is null)
+                        {
+                            p = new Participant(id, varsta, new List<long>());
+                        }
+                        var newLst = p.Concursuri;
+                        newLst.Add(concurs);
+                        p.Concursuri = newLst;
                         Log.Info("Found participant with id=" + id);
                         return p;
                     }
@@ -81,23 +103,7 @@ namespace MPP_CSharp.Repository
             foreach (var id in participantIDs)
             {
                 Log.Info("Trying to find Participant with id="+id);
-                using (var command = new SQLiteCommand("SELECT * FROM Participant WHERE id = @id", connection))
-                {
-                    command.Parameters.AddWithValue("@id", id);
-                    using (var reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
-                            Log.Info("Found Participant with id="+id);
-                            lst.Add(new Participant(id, varsta, new long[] { }));
-                        }
-                        else
-                        {
-                            Log.Error("Could not find Participant with id="+id);
-                        }
-                    }
-                }
+                lst.Add(Find(id));
             }
             return lst;
         }

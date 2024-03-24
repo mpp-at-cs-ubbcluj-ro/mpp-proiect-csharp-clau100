@@ -26,6 +26,17 @@ namespace MPP_CSharp.Tests
                 {
                     throw new TestingException();
                 }
+
+                foreach (var c in all)
+                {
+                    switch (c.Id)
+                    {
+                        case 1 when c.Participanti[0] != 1:
+                            throw new TestingException();
+                        case 2 when c.Participanti[0] != 2:
+                            throw new TestingException();
+                    }
+                }
             }
             catch (TestingException)
             {
@@ -40,7 +51,7 @@ namespace MPP_CSharp.Tests
             try
             {
                 var concurs = concursuri.Find(2);
-                if (concurs.Id != 2 || concurs.Proba != "Dans" || concurs.VarstaMin != 12 || concurs.VarstaMax != 14)
+                if (concurs.Id != 2 || concurs.Proba != "Dans" || concurs.VarstaMin != 12 || concurs.VarstaMax != 14 || concurs.Participanti[0] != 2)
                 {
                     throw new TestingException();
                 }

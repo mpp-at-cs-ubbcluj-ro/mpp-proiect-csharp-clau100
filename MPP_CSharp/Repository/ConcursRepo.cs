@@ -7,7 +7,7 @@ namespace MPP_CSharp.Repository
 {
     public class ConcursRepo : BdRepo, IConcursRepo
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(UserRepo));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ConcursRepo));
 
         public ConcursRepo(bool testing) : base(testing)
         {
@@ -18,17 +18,38 @@ namespace MPP_CSharp.Repository
             var arr = new List<Concurs>();
             Log.Info("Fetching all Concurs from DB");
             var connection = GetConnection();
-            using (var command = new SQLiteCommand("SELECT * FROM Concurs", connection))
+            using (var command = new SQLiteCommand("SELECT * FROM Concurs c INNER JOIN Inscrieri i ON c.id = i.concurs", connection))
             {
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         var id = reader.GetInt64(reader.GetOrdinal("id"));
+                        var found = false;
+                        for (int i = 0; i < arr.Count; i++)
+                        {
+                            if (arr[i].Id != id) continue;
+                            var newParticipanti = arr[i].Participanti;
+                            var participantId = reader.GetInt64(reader.GetOrdinal("participant"));
+                            Log.Info("Participant cu id="+participantId);
+                            newParticipanti.Add(participantId);
+                            arr[i].Participanti = newParticipanti;
+                            found = true;
+                        }
+
+                        if (found)
+                        {
+                            continue;
+                        }
+
                         var proba = reader.GetString(reader.GetOrdinal("Proba"));
                         var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
                         var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
-                        var c = new Concurs(id, proba, varstaMin, varstaMax, new long[] { });
+                        var pId = reader.GetInt64(reader.GetOrdinal("participant"));
+                        var lst = new List<long>();
+                        lst.Add(pId);
+                        var c = new Concurs(id, proba, varstaMin, varstaMax, lst);
+                        
                         arr.Add(c);
                         Log.Info("Found Concurs with id="+id);
                     }
@@ -41,24 +62,37 @@ namespace MPP_CSharp.Repository
         {
             Log.Info("Trying to find Concurs with id="+id);
             var connection = GetConnection();
-            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs where id = @id", connection))
+            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs c INNER JOIN Inscrieri i on c.id = i.concurs where c.id = @id", connection))
             {
                 command.Parameters.AddWithValue("@id", id);
                 using (var reader = command.ExecuteReader())
                 {
+                    var created = false;
+                    Concurs concurs = null;
                     while (reader.Read())
                     {
-                        var proba = reader.GetString(reader.GetOrdinal("Proba"));
-                        var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
-                        var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
-                        var c = new Concurs(id, proba, varstaMin, varstaMax, new long[] { });
-                        Log.Info("Found Concurs with id="+id);
-                        return c;
+                        if (concurs is null)
+                        {
+                            var proba = reader.GetString(reader.GetOrdinal("Proba"));
+                            var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
+                            var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
+                            concurs = new Concurs(id, proba, varstaMin, varstaMax, new List<long>());
+                        }
+
+                        var participant = reader.GetInt64(reader.GetOrdinal("concurs"));
+                        var newList = concurs.Participanti;
+                        newList.Add(participant);
+                        concurs.Participanti = newList;
+                        Log.Info("Found Concurs with id="+id+" and with participant="+participant);
                     }
+
+                    if (concurs is null)
+                    {
+                        Log.Error("Found no concurs with id="+id);
+                    }
+                    return concurs;
                 }
             }
-            Log.Warn("Found no Concurs with id="+id);
-            return null;
         }
 
         public void Delete(long id)
@@ -79,9 +113,9 @@ namespace MPP_CSharp.Repository
         public IEnumerable<Concurs> FindAllForAge(int age)
         {
             Log.Info("Trying to find all Concurs for age: "+age);
-            var lst = new List<Concurs>();
+            var arr = new List<Concurs>();
             var connection = GetConnection();
-            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs WHERE @age >= VarstaMin and @age <= VarstaMax", connection))
+            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs c INNER JOIN Inscrieri i on c.id = i.participant WHERE @age >= VarstaMin and @age <= VarstaMax", connection))
             {
                 command.Parameters.AddWithValue("@age", age);
                 using (var reader = command.ExecuteReader())
@@ -89,15 +123,36 @@ namespace MPP_CSharp.Repository
                     while (reader.Read())
                     {
                         var id = reader.GetInt64(reader.GetOrdinal("id"));
+                        var found = false;
+                        for (int i = 0; i < arr.Count; i++)
+                        {
+                            if (arr[i].Id != id) continue;
+                            var newParticipanti = arr[i].Participanti;
+                            var participantID = reader.GetInt64(reader.GetOrdinal("participant"));
+                            newParticipanti.Add(participantID);
+                            arr[i].Participanti = newParticipanti;
+                            found = true;
+                        }
+
+                        if (found)
+                        {
+                            continue;
+                        }
+
                         var proba = reader.GetString(reader.GetOrdinal("Proba"));
                         var varstaMin = reader.GetInt32(reader.GetOrdinal("VarstaMin"));
                         var varstaMax = reader.GetInt32(reader.GetOrdinal("VarstaMax"));
-                        Log.Info("Found concurs with id="+id);
-                        lst.Add(new Concurs(id, proba, varstaMin, varstaMax, new long[]{ }));
+                        var pId = reader.GetInt64(reader.GetOrdinal("participant"));
+                        var lst = new List<long>();
+                        lst.Add(pId);
+                        var c = new Concurs(id, proba, varstaMin, varstaMax, lst);
+                        
+                        arr.Add(c);
+                        Log.Info("Found Concurs with id="+id);
                     }
                 }
             }
-            return lst;
+            return arr;
         }
     }
 }
