@@ -127,12 +127,18 @@
         <Compile Include="Repository\ParticipantRepo.cs" />
         <Compile Include="Repository\SecurePasswordHasher.cs" />
         <Compile Include="Repository\UserRepo.cs" />
+        <Compile Include="Service\ConcursService.cs" />
         <Compile Include="Service\UserService.cs" />
-        <Compile Include="Service\UserValidator.cs" />
         <Compile Include="Tests\TestConcursRepo.cs" />
         <Compile Include="Tests\TestingException.cs" />
         <Compile Include="Tests\TestParticipantRepo.cs" />
         <Compile Include="Tests\TestUserRepo.cs" />
+        <Compile Include="UserView.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="UserView.Designer.cs">
+          <DependentUpon>UserView.cs</DependentUpon>
+        </Compile>
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
         </EmbeddedResource>
@@ -145,6 +151,9 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="UserView.resx">
+          <DependentUpon>UserView.cs</DependentUpon>
+        </EmbeddedResource>
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>

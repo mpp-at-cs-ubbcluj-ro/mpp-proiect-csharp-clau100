@@ -26,13 +26,14 @@ namespace MPP_CSharp
             var u = new User(0, usernameInput.Text, passwordInput.Text);
             var errs = new ValidationErrors();
             _userService.Validator.Validate(u, errs);
-            usernameError.Visible = errs.GetErrors("Username").Count > 0;
+            
+            usernameError.Visible = errs.GetErrors("username").Count > 0;
 
-            passwordError.Visible = errs.GetErrors("Password").Count > 0;
+            passwordError.Visible = errs.GetErrors("password").Count > 0;
 
             if (!errs.IsEmpty) return;
 
-            loginError.Visible = _userService.CheckUser(u);
+            loginError.Visible = !_userService.CheckUser(u);
 
             if (loginError.Visible) return;
             

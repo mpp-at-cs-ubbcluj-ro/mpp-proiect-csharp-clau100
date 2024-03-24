@@ -60,3 +60,5 @@ C:\Users\claud\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\Sys
 C:\Users\claud\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Security.AccessControl.xml
 C:\Users\claud\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Security.Permissions.xml
 C:\Users\claud\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\claud\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.Form1.resources
+C:\Users\claud\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.UserView.resources

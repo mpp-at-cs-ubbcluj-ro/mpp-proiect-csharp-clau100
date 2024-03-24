@@ -8,19 +8,18 @@ namespace MPP_CSharp.Service
 {
     public class UserService
     {
-        private readonly IUserRepo _userRepo = new UserRepo();
-
+        private IUserRepo UserRepo { get; set; }
         public IValidator Validator { get; set; }
 
         private static readonly ILog Log = LogManager.GetLogger(typeof(UserService));
         public List<User> GetAll()
         {
-            return _userRepo.GetAll();
+            return UserRepo.GetAll();
         }
 
         public User Find(long id)
         {
-            return _userRepo.Find(id);
+            return UserRepo.Find(id);
         }
 
         public bool CheckUser(User u)
@@ -29,7 +28,7 @@ namespace MPP_CSharp.Service
             {
                 Log.Error("Provided User is not a valid user!");
             }
-            return _userRepo.CheckUser(u);
+            return UserRepo.CheckUser(u);
         }
         
     }
