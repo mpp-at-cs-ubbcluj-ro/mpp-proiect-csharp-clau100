@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace MPP_CSharp.Repository
             var arr = new List<Participant>();
             Log.Info("Fetching all Participanti from DB");
             var connection = GetConnection();
-            using (var command = new SQLiteCommand("SELECT * FROM Participant p INNER JOIN Inscrieri I on p.id = i.participant", connection))
+            using (var command = new SQLiteCommand("SELECT * FROM Participant p LEFT JOIN Inscrieri I on p.id = i.participant", connection))
             {
                 using (var reader = command.ExecuteReader())
                 {
@@ -29,8 +30,19 @@ namespace MPP_CSharp.Repository
                         var id = reader.GetInt64(reader.GetOrdinal("id"));
                         var varsta = reader.GetInt32(reader.GetOrdinal("Varsta"));
                         var nume = reader.GetString(reader.GetOrdinal("Nume"));
-                        var concurs = reader.GetInt64(reader.GetOrdinal("concurs"));
+                        long concurs = 0;
+                        try
+                        {
+                            concurs = reader.GetInt64(reader.GetOrdinal("concurs"));
+                        }
+                        catch (InvalidCastException ){}
+
                         var found = false;
+                        if (concurs == 0)
+                        {
+                            arr.Add(new Participant(id, varsta, nume, new List<long>()));
+                            continue;
+                        }
                         foreach (var t in arr.Where(t => t.Id == id))
                         {
                             t.Concursuri.Add(concurs);
@@ -52,7 +64,7 @@ namespace MPP_CSharp.Repository
         {
             Log.Info("Trying to find Participant with id="+id);
             var connection = GetConnection();
-            using (var command = new SQLiteCommand(@"SELECT * FROM Participant p INNER JOIN Inscrieri I on p.id = i.participant where p.id = @id", connection))
+            using (var command = new SQLiteCommand(@"SELECT * FROM Participant p LEFT JOIN Inscrieri I on p.id = i.participant where p.id = @id", connection))
             {
                 command.Parameters.AddWithValue("@id", id);
                 using (var reader = command.ExecuteReader())
@@ -84,7 +96,20 @@ namespace MPP_CSharp.Repository
 
         public void Add(Participant toAdd)
         {
-            throw new System.NotImplementedException();
+            Log.Info("Trying to add a Participant");
+            var connection = GetConnection();
+            using (var command = new SQLiteCommand(@"INSERT INTO Participant(Nume, Varsta) VALUES (@Nume, @Varsta)", connection))
+            {
+                command.Parameters.AddWithValue("@Nume", toAdd.Nume);
+                command.Parameters.AddWithValue("@Varsta", toAdd.Varsta);
+                var result = command.ExecuteNonQuery();
+                if (result <= 0)
+                {
+                    Log.Error("Could not add Participant");
+                    return;
+                }
+                Log.Info("Added Participant");
+            }
         }
 
         public void Update(Participant toUpdate)

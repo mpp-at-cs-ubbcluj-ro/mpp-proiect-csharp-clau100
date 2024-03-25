@@ -59,7 +59,7 @@ namespace MPP_CSharp.Repository
         {
             Log.Info("Trying to find Concurs with id="+id);
             var connection = GetConnection();
-            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs c INNER JOIN Inscrieri i on c.id = i.concurs where c.id = @id", connection))
+            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs c LEFT JOIN Inscrieri i on c.id = i.concurs where c.id = @id", connection))
             {
                 command.Parameters.AddWithValue("@id", id);
                 using (var reader = command.ExecuteReader())
@@ -75,7 +75,7 @@ namespace MPP_CSharp.Repository
                             concurs = new Concurs(id, proba, varstaMin, varstaMax, new List<long>());
                         }
 
-                        var participant = reader.GetInt64(reader.GetOrdinal("concurs"));
+                        var participant = reader.GetInt64(reader.GetOrdinal("participant"));
                         concurs.Participanti.Add(participant);
                         Log.Info("Found Concurs with id="+id+" and with participant="+participant);
                     }
@@ -109,7 +109,7 @@ namespace MPP_CSharp.Repository
             Log.Info("Trying to find all Concurs for age: "+age);
             var arr = new List<Concurs>();
             var connection = GetConnection();
-            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs c INNER JOIN Inscrieri i on c.id = i.participant WHERE @age >= VarstaMin and @age <= VarstaMax", connection))
+            using (var command = new SQLiteCommand(@"SELECT * FROM Concurs c LEFT JOIN Inscrieri i on c.id = i.concurs WHERE @age >= VarstaMin and @age <= VarstaMax", connection))
             {
                 command.Parameters.AddWithValue("@age", age);
                 using (var reader = command.ExecuteReader())
@@ -145,5 +145,24 @@ namespace MPP_CSharp.Repository
             }
             return arr;
         }
+
+        public void Inregistreaza(long cId, long pId)
+        {
+            Log.Info("Enrolling participant with id="+pId+" to concurs with id="+cId);
+            var connection = GetConnection();
+            using (var command = new SQLiteCommand(@"INSERT INTO Inscrieri(concurs, participant) VALUES (@cId, @pId)", connection))
+            {
+                command.Parameters.AddWithValue("@cId", cId);
+                command.Parameters.AddWithValue("@pId", pId);
+                var result = command.ExecuteNonQuery();
+                if (result <= 0)
+                {
+                    Log.Error("Did not enroll anything!");
+                    return;
+                }
+                Log.Info("Enrolled!");
+            }
+        }
+        
     }
 }

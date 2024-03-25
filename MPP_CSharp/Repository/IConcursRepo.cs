@@ -6,6 +6,6 @@ namespace MPP_CSharp.Repository
     public interface IConcursRepo : IRepo<Concurs, long>
     {
         IEnumerable<Concurs> FindAllForAge(int age);
-        
+        void Inregistreaza(long cId, long pId);
     }
 }

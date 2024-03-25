@@ -26,5 +26,10 @@ namespace MPP_CSharp.Service
         {
             return ConcursRepo.FindAllForAge(age);
         }
+
+        public void Inregistreaza(long cId, long pId)
+        {
+            ConcursRepo.Inregistreaza(cId, pId);
+        }
     }
 }

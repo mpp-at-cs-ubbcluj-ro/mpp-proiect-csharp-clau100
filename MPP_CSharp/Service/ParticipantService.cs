@@ -21,6 +21,11 @@ namespace MPP_CSharp.Service
         {
             return ParticipantRepo.Find(id);
         }
+
+        public void Add(Participant toAdd)
+        {
+            ParticipantRepo.Add(toAdd);
+        }
         
     }
 }
