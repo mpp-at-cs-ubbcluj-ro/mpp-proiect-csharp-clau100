@@ -43,7 +43,7 @@
             // 
             this.usernameLabel.Location = new System.Drawing.Point(21, 35);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(100, 23);
+            this.usernameLabel.Size = new System.Drawing.Size(108, 23);
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "username";
             // 
@@ -51,14 +51,14 @@
             // 
             this.usernameInput.Location = new System.Drawing.Point(21, 61);
             this.usernameInput.Name = "usernameInput";
-            this.usernameInput.Size = new System.Drawing.Size(169, 29);
+            this.usernameInput.Size = new System.Drawing.Size(201, 35);
             this.usernameInput.TabIndex = 1;
             // 
             // passwordLabel
             // 
             this.passwordLabel.Location = new System.Drawing.Point(21, 116);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(100, 25);
+            this.passwordLabel.Size = new System.Drawing.Size(108, 25);
             this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "password";
             // 
@@ -67,14 +67,14 @@
             this.passwordInput.Location = new System.Drawing.Point(21, 144);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.PasswordChar = '*';
-            this.passwordInput.Size = new System.Drawing.Size(169, 29);
+            this.passwordInput.Size = new System.Drawing.Size(201, 35);
             this.passwordInput.TabIndex = 3;
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(21, 202);
+            this.login.Location = new System.Drawing.Point(21, 219);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(75, 29);
+            this.login.Size = new System.Drawing.Size(75, 35);
             this.login.TabIndex = 4;
             this.login.Text = "login";
             this.login.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             this.usernameError.ForeColor = System.Drawing.Color.Red;
             this.usernameError.Location = new System.Drawing.Point(21, 93);
             this.usernameError.Name = "usernameError";
-            this.usernameError.Size = new System.Drawing.Size(217, 23);
+            this.usernameError.Size = new System.Drawing.Size(287, 23);
             this.usernameError.TabIndex = 5;
             this.usernameError.Text = "Username cannot be empty";
             this.usernameError.Visible = false;
@@ -95,7 +95,7 @@
             this.passwordError.ForeColor = System.Drawing.Color.Red;
             this.passwordError.Location = new System.Drawing.Point(21, 176);
             this.passwordError.Name = "passwordError";
-            this.passwordError.Size = new System.Drawing.Size(217, 23);
+            this.passwordError.Size = new System.Drawing.Size(287, 23);
             this.passwordError.TabIndex = 6;
             this.passwordError.Text = "Password cannot be empty";
             this.passwordError.Visible = false;
@@ -103,19 +103,20 @@
             // loginError
             // 
             this.loginError.ForeColor = System.Drawing.Color.Red;
-            this.loginError.Location = new System.Drawing.Point(21, 234);
+            this.loginError.Location = new System.Drawing.Point(21, 257);
             this.loginError.Name = "loginError";
-            this.loginError.Size = new System.Drawing.Size(226, 23);
+            this.loginError.Size = new System.Drawing.Size(287, 23);
             this.loginError.TabIndex = 7;
             this.loginError.Text = "Wrong username/ password";
             this.loginError.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AcceptButton = this.login;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(362, 312);
+            this.ClientSize = new System.Drawing.Size(542, 367);
             this.Controls.Add(this.loginError);
             this.Controls.Add(this.passwordError);
             this.Controls.Add(this.usernameError);
