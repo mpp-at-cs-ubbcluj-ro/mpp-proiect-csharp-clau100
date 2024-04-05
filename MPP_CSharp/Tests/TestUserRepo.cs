@@ -7,16 +7,15 @@ namespace MPP_CSharp.Tests
     public class TestUserRepo
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(TestUserRepo));
-        public static bool TestAll()
+        public static void TestAll()
         {
             var users = new UserRepo(true);
-            var ok = TestGetAll(users);
-            ok &= TestFind(users);
-            ok &= TestCheckUser(users);
-            return ok;
+            TestGetAll(users);
+            TestFind(users);
+            TestCheckUser(users);
         }
 
-        private static bool TestGetAll(UserRepo users)
+        private static void TestGetAll(UserRepo users)
         {
             try
             {
@@ -28,14 +27,12 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("GetAll does not work!");
-                return false;
+                throw new TestingException("GetAll does not work!");
             }
 
-            return true;
         }
 
-        private static bool TestFind(UserRepo users)
+        private static void TestFind(UserRepo users)
         {
             try
             {
@@ -47,14 +44,11 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("Find does not work!");
-                return false;
+                throw new TestingException("Find does not work!");
             }
-
-            return true;
         }
 
-        private static bool TestCheckUser(IUserRepo users)
+        private static void TestCheckUser(IUserRepo users)
         {
             try
             {
@@ -66,11 +60,9 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("CheckUser does not work!");
-                return false;
+                throw new TestingException("CheckUser does not work!");
             }
 
-            return true;
         }
     }
 }

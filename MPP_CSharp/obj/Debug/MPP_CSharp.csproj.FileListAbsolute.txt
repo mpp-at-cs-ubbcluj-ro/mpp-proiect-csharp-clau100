@@ -85,3 +85,5 @@ C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\Syst
 C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.Form1.resources
 C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\obj\Debug\MPP_CSharp.UserView.resources
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\RiderProjects\mpp-proiect-csharp-clau100\MPP_CSharp\bin\Debug\Newtonsoft.Json.xml

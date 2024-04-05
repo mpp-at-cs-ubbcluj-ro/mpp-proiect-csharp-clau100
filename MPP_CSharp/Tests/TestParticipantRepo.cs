@@ -9,16 +9,15 @@ namespace MPP_CSharp.Tests
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(TestParticipantRepo));
 
-        public static bool TestAll()
+        public static void TestAll()
         {
             var participanti = new ParticipantRepo(true);
-            var ok = TestGetAll(participanti);
-            ok &= TestFind(participanti);
-            ok &= TestFindFromList(participanti);
-            return ok;
+            TestGetAll(participanti);
+            TestFind(participanti);
+            TestFindFromList(participanti);
         }
 
-        private static bool TestGetAll(ParticipantRepo participanti)
+        private static void TestGetAll(ParticipantRepo participanti)
         {
             try
             {
@@ -30,14 +29,11 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("GetAll does not work!");
-                return false;
+                throw new TestingException("GetAll does not work!");
             }
-
-            return true;
         }
 
-        private static bool TestFind(ParticipantRepo participanti)
+        private static void TestFind(ParticipantRepo participanti)
         {
             try
             {
@@ -49,14 +45,11 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("Find does not work!");
-                return false;
+                throw new TestingException("TestFind does not work!");
             }
-
-            return true;
         }
 
-        private static bool TestFindFromList(IParticipantRepo participanti)
+        private static void TestFindFromList(IParticipantRepo participanti)
         {
             var inputs = new List<long>{ 1, 2 };
             try
@@ -69,11 +62,8 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("FindAllFromList does not work!");
-                return false;
+                throw new TestingException("FindFromList does not work!");
             }
-
-            return true;
         }
         
     }

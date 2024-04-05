@@ -8,13 +8,12 @@ namespace MPP_CSharp.Tests
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(TestConcursRepo));
 
-        public static bool TestAll()
+        public static void TestAll()
         {
             var concursuri = new ConcursRepo(true);
-            var ok = TestGetAll(concursuri);
-            ok &= TestFind(concursuri);
-            ok &= TestFindAllForAge(concursuri);
-            return ok;
+            TestGetAll(concursuri);
+            TestFind(concursuri);
+            TestFindAllForAge(concursuri);
         }
 
         private static bool TestGetAll(ConcursRepo concursuri)
@@ -40,13 +39,12 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("GetAll does not work!");
-                return false;
+                throw new TestingException("GetAll does not work!");
             }
             return true;
         }
 
-        private static bool TestFind(ConcursRepo concursuri)
+        private static void TestFind(ConcursRepo concursuri)
         {
             try
             {
@@ -58,13 +56,11 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("Find does not work!");
-                return false;
+                throw new TestingException("Find does not work");
             }
-            return true;
         }
 
-        private static bool TestFindAllForAge(IConcursRepo concursuri)
+        private static void TestFindAllForAge(IConcursRepo concursuri)
         {
             try
             {
@@ -76,11 +72,8 @@ namespace MPP_CSharp.Tests
             }
             catch (TestingException)
             {
-                Log.Error("FindAllForAge does not work!");
-                return false;
+                throw new TestingException("FindAllForAge does not work!");
             }
-
-            return true;
         }
     }
 }
